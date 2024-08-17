@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./RequestSubmit.css";
 
 const RequestSubmit = () => {
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -25,9 +28,8 @@ const RequestSubmit = () => {
       });
       const result = await res.json();
       toast.success("Submit form data successfully");
-
-      // Reset the form
       form.reset();
+      navigate("/");
     } catch (error) {
       console.error("Error adding card:", error);
     }
@@ -51,8 +53,7 @@ const RequestSubmit = () => {
               type="text"
               id="title"
               name="title"
-              placeholder="Title"
-              className="form-input w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input h-20 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -66,8 +67,9 @@ const RequestSubmit = () => {
             <textarea
               id="description"
               name="description"
-              className="form-input w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input h-36 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
+              res
             ></textarea>
           </div>
           <div className="mb-6">

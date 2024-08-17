@@ -1,26 +1,32 @@
 [
   {
     "title": "Branches",
-    "description": "Abstract Branches lets you manage, version, and document your designs in one place."
+    "description": "Abstract Branches lets you manage, version, and document your designs in one place.",
+    "link": "/branches"
   },
   {
     "title": "Manage your account",
-    "description": "Configure your account settings, such as your email,profile details, and password."
+    "description": "Configure your account settings, such as your email,profile details, and password.",
+    "link": "/manage-your-account"
   },
   {
     "title": "Manage organizations,teams, and projects",
-    "description": "Use Abstract organizations,teams, and projects to organize your people and your work."
+    "description": "Use Abstract organizations,teams, and projects to organize your people and your work.",
+    "link": "/manage-organizations,teams,-and projects"
   },
   {
     "title": "Manage billing",
-    "description": "Change subscriptions and payment details"
+    "description": "Change subscriptions and payment details",
+    "link": "/manage-billing"
   },
   {
     "title": "Authenticate to Abstract",
-    "description": "Set up and configure SSO, SCIM, and Just-in-Time provisioning."
+    "description": "Set up and configure SSO, SCIM, and Just-in-Time provisioning.",
+    "link": "authenticate-to-abstract"
   },
   {
     "title": "Abstract support",
-    "description": "Get in touch with a human."
+    "description": "Get in touch with a human.",
+    "link": "abstract-support"
   }
 ]
