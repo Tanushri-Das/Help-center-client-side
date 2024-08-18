@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import "./RequestSubmit.css";
+import { toast } from "react-toastify";
 
 const RequestSubmit = () => {
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({
+    title: "",
+    description: "",
+    link: "",
+  });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const title = form.title.value;
-    const description = form.description.value;
-    const link = form.link.value;
+    const title = form.title.value.trim();
+    const description = form.description.value.trim();
+    const link = form.link.value.trim();
+
+    const newErrors = {
+      title: !title ? "Title is required." : "",
+      description: !description ? "Description is required." : "",
+      link: !link ? "Link is required." : "",
+    };
+
+    setErrors(newErrors);
+
+    if (newErrors.title || newErrors.description || newErrors.link) {
+      return;
+    }
 
     const formData = {
       title,
@@ -26,12 +44,18 @@ const RequestSubmit = () => {
           "Content-Type": "application/json",
         },
       });
-      const result = await res.json();
-      toast.success("Submit form data successfully");
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to submit the form");
+      }
+
+      toast.success("Form submitted successfully!");
       form.reset();
       navigate("/");
     } catch (error) {
-      console.error("Error adding card:", error);
+      toast.error(error.message);
+      console.error("Error adding card:", error.message);
     }
   };
 
@@ -54,8 +78,10 @@ const RequestSubmit = () => {
               id="title"
               name="title"
               className="form-input h-20 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
             />
+            {errors.title && (
+              <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+            )}
           </div>
           <div className="mb-3">
             <label
@@ -68,9 +94,10 @@ const RequestSubmit = () => {
               id="description"
               name="description"
               className="form-input h-36 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-              res
             ></textarea>
+            {errors.description && (
+              <p className="text-red-500 text-sm mt-1">{errors.description}</p>
+            )}
           </div>
           <div className="mb-6">
             <label
@@ -83,10 +110,11 @@ const RequestSubmit = () => {
               type="text"
               id="link"
               name="link"
-              placeholder="Link"
               className="form-input w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
             />
+            {errors.link && (
+              <p className="text-red-500 text-sm mt-1">{errors.link}</p>
+            )}
           </div>
           <button
             type="submit"
