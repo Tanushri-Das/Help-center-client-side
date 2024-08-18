@@ -5,8 +5,8 @@ import Header from "../Components/Shared/Header/Header";
 
 const Main = () => {
   return (
-    <div className="mx-1 mt-1">
-      {/* <Header /> */}
+    <div className="m-1">
+      <Header />
       <Outlet />
       <Footer/>
     </div>
