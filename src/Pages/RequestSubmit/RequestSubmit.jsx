@@ -61,7 +61,7 @@ const RequestSubmit = () => {
 
   return (
     <div className="container mx-auto m-12">
-      <div className="border-2 border-gray-300 w-full max-w-md mx-auto flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg">
+      <div className="border-2 border-gray-300 w-full max-w-lg mx-auto flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg">
         <h2 className="font-semibold text-3xl mb-6 text-center text-gray-800">
           Request
         </h2>
@@ -77,7 +77,7 @@ const RequestSubmit = () => {
               type="text"
               id="title"
               name="title"
-              className="form-input h-20 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {errors.title && (
               <p className="text-red-500 text-sm mt-1">{errors.title}</p>
@@ -93,7 +93,7 @@ const RequestSubmit = () => {
             <textarea
               id="description"
               name="description"
-              className="form-input h-36 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input h-36 w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
             {errors.description && (
               <p className="text-red-500 text-sm mt-1">{errors.description}</p>

@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
         <div className="pe-0 md:pe-48">
           <Link to="/request-submit">
-            <button className="text-white rounded-md text-sm md:text-[16px] border border-gray-300 px-4 py-1">
+            <button className="text-white rounded-md text-sm md:text-[16px] border border-gray-300 px-4 py-2">
               Submit a request
             </button>
           </Link>

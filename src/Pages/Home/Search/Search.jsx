@@ -14,7 +14,7 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="text-center py-20 bg-blue-200">
+    <div className="text-center py-20 bg-slate-200">
       <h2 className="text-4xl font-bold mb-8">How can we help?</h2>
 
       <div className="w-full md:w-[500px] mx-auto mb-8 px-5 md:px-0">
@@ -27,7 +27,7 @@ const Search = ({ onSearch }) => {
             onChange={handleChange}
           />
           <button onClick={handleSearch}>
-            <FaArrowRight className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            <FaArrowRight className="absolute text-lg right-4 top-1/2 transform -translate-y-1/2" />
           </button>
         </div>
       </div>
