@@ -35,24 +35,24 @@ const RequestSubmit = () => {
       description,
       link,
     };
-
+    console.log(formData);
     try {
-      const res = await fetch("http://localhost:5000/cards", {
+      const res = await fetch("https://help-center-server-side.vercel.app/cards", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json",
         },
       });
-
-      if (!res.ok) {
+      console.log(res);
+      if (res.status === 200) {
+        toast.success("Form submitted successfully!");
+        form.reset();
+        navigate("/");
+      } else {
         const errorData = await res.json();
         throw new Error(errorData.message || "Failed to submit the form");
       }
-
-      toast.success("Form submitted successfully!");
-      form.reset();
-      navigate("/");
     } catch (error) {
       toast.error(error.message);
       console.error("Error adding card:", error.message);

@@ -13,7 +13,7 @@ const SectionCards = ({ searchQuery }) => {
       setError(null);
       try {
         const response = await fetch(
-          `http://localhost:5000/cards/${searchQuery}`
+          `https://help-center-server-side.vercel.app/cards/${searchQuery}`
         );
 
         if (!response.ok) {
@@ -37,7 +37,7 @@ const SectionCards = ({ searchQuery }) => {
   }
 
   if (error) {
-    return <div className="text-center text-xl text-red-500 mt-8">{error}</div>;
+    return <div className="text-center text-xl text-red-500 my-8">{error}</div>;
   }
 
   return (
