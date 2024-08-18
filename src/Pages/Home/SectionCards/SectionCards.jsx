@@ -41,11 +41,11 @@ const SectionCards = ({ searchQuery }) => {
   }
 
   return (
-    <div className="mx-6 my-12 xl:m-12">
+    <div className="mx-6 my-12 sm:mx-16 xl:m-12">
       {sections.length === 0 ? (
         <div className="text-center text-xl">No cards found</div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full md:w-7/12 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full md:w-4/5 lg:w-5/6 xl:w-7/12 mx-auto">
           {sections.map((section) => (
             <div
               className="bg-gray-200 pt-4 pb-5 rounded-xl border-2 border-gray-300"
