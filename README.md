@@ -1,3 +1,17 @@
+# React Assignment
+1. How can you implement shared functionality across a component tree ?
+
+We can implement shared functionality across a component tree by using:
+
+* Context API : Create a context to provide and consume shared values or functions throughout the component tree.
+* Custom Hooks : Encapsulate reusable logic in custom hooks and use them in any component that needs the functionality.
+* Render Props : Use render props to pass shared logic or data to children components.
+* Utility Functions : Create utility functions or classes and import them into components where needed.
+
+2. Why is the useState hook appropriate for handling state in a complex component ?
+
+In React, the useState hook is a function that allows us to add state management to functional components. It's one of the most essential hooks provided by React and enables us to manage and update the state of our components without using class components.
+
 # Overview of the project
 This project is a Help Center application where users can submit new requests, view all sections, and retrieve details of a specific card by its title. The project is built using React.js, Tailwind CSS, Node.js, Express.js, Mongoose, and MongoDB.
 
