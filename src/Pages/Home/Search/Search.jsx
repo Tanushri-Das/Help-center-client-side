@@ -10,14 +10,14 @@ const Search = ({ onSearch }) => {
   };
 
   const handleSearch = () => {
-    onSearch(query.trim().toLowerCase()); // Convert query to lowercase before sending
+    onSearch(query.trim().toLowerCase());
   };
 
   return (
     <div className="text-center py-20 bg-blue-200">
       <h2 className="text-4xl font-bold mb-8">How can we help?</h2>
 
-      <div className="w-full md:w-[500px] mx-auto mb-8">
+      <div className="w-full md:w-[500px] mx-auto mb-8 px-5 md:px-0">
         <div className="relative flex items-center w-full h-12 border border-black shadow-lg bg-white overflow-hidden">
           <input
             type="text"

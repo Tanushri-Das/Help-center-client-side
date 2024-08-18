@@ -6,7 +6,7 @@ import Header from "../Components/Shared/Header/Header";
 const Main = () => {
   return (
     <div className="mx-1 mt-1">
-      <Header />
+      {/* <Header /> */}
       <Outlet />
       <Footer/>
     </div>

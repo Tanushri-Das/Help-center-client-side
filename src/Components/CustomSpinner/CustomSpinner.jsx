@@ -3,7 +3,7 @@ import "./CustomSpinner.css";
 
 const CustomSpinner = () => {
   return (
-    <div className="container mt-12">
+    <div className="container my-12">
       <div className="spinner"></div>
     </div>
   );
