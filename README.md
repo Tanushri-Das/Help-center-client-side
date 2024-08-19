@@ -10,7 +10,7 @@ We can implement shared functionality across a component tree by using:
 
 2. Why is the useState hook appropriate for handling state in a complex component ?
 
-In React, the useState hook is a function that allows us to add state management to functional components. It's one of the most essential hooks provided by React and enables us to manage and update the state of our components without using class components.
+UseState is appropriate for handling state in complex components because it provides a simple API for initializing and updating state, which keeps our code readable and maintainable. It ensures the component re-renders when state changes, keeping the UI in sync. We can use multiple useState calls to handle different pieces of state separately, improving code organization. Additionally, it encapsulates state within the component, making it easier to manage locally.
 
 # Overview of the project
 This project is a Help Center application where users can submit new requests, view all sections, and retrieve details of a specific card by its title. The project is built using React.js, Tailwind CSS, Node.js, Express.js, Mongoose, and MongoDB.
